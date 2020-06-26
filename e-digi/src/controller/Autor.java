@@ -14,9 +14,9 @@ public class Autor {
         // valida campo em branco ou se apenas tem espaço.
         if (nome.trim().isEmpty()) {
             throw new IllegalArgumentException("Não é permitido nomes em branco, por favor digite um nome válido!");
-        } else {
-            this.nome = nome;
         }
+
+        this.nome = nome;
 
     }
 
@@ -24,26 +24,25 @@ public class Autor {
         // valida se o valor digitado é um email
         String regex = "^[A-Za-z0-9+_.-]+@(.+)$";
 
-        if (email.matches(regex)) {
-            this.email = email;
-        } else {
-            throw new IllegalArgumentException("Email inválido!");
+        if (!email.matches(regex)) {
+            throw new IllegalArgumentException("Email Inválido!");
         }
+
+        this.email = email;
 
     }
 
-    // método para sobrescrever o hash para que permita criar um objeto do mesmo
-    // tipo
+    // método para sobrescrever o hash para que permita criar um objeto do mesmo tipo
     @Override
     public int hashCode() {
-        return this.email.charAt(0);
+        return this.email.hashCode();
     }
 
     // método para sobrescrever o equals, para comparar se tem email duplicado
     @Override
     public boolean equals(Object obj) {
-        Autor novo = (Autor) obj;
-        return this.email.equals(novo.email);
+        Autor autor = (Autor) obj;
+        return this.email.equals(autor.email);
     }
 
     @Override

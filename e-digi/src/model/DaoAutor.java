@@ -13,7 +13,7 @@ public class DaoAutor {
 
         // confere se o email existe na base
         if (!autor.add(a)) {
-            throw new IllegalArgumentException("Email informado já existe!");
+            throw new RuntimeException("Email informado já existe!");
         }
 
         System.out.println("Cadastro realizado com sucesso!");

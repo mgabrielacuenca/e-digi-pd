@@ -7,7 +7,7 @@ public class Main {
 
         // criando autor
         Autor autor = new Autor("Gabriela", "mariagabitsi@gmail.com");
-        Autor autor1 = new Autor("Gabriela", "mariagab@gmail.com");
+        Autor autor1 = new Autor("Gabriela", "mariagabi@gmail.com");
 
         // realizando as inserções e imprimindo no caso de sucesso
         DaoAutor autoradd = new DaoAutor();
