@@ -1,6 +1,7 @@
 package controller;
 
-import model.DaoAutor;
+import dao.DaoAutor;
+import model.Autor;
 
 public class MainAutor {
     public static void main(final String[] args) throws Exception {

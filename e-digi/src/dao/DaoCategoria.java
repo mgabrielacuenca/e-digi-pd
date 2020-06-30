@@ -1,9 +1,9 @@
-package model;
+package dao;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import controller.Categoria;
+import model.Categoria;
 
 public class DaoCategoria {
 
