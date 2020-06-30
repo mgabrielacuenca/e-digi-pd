@@ -1,4 +1,4 @@
-package controller;
+package model;
 
 public class Autor {
 
@@ -10,9 +10,9 @@ public class Autor {
         setEmail(email);
     }
 
-    public void setNome(String nome) {
+    private void setNome(String nome) {
         // valida campo em branco ou se apenas tem espaço.
-        if (nome.trim().isEmpty()) {
+        if (nome == null || nome.trim().isEmpty())) {
             throw new IllegalArgumentException("Não é permitido nomes em branco, por favor digite um nome válido!");
         }
 
@@ -20,7 +20,7 @@ public class Autor {
 
     }
 
-    public void setEmail(String email) {
+    private void setEmail(String email) {
         // valida se o valor digitado é um email
         String regex = "^[A-Za-z0-9+_.-]+@(.+)$";
 
