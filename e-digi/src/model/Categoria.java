@@ -9,7 +9,7 @@ public class Categoria {
     }
 
     private void setNome(String nome) {
-        if (nome.trim().isEmpty()) {
+        if (nome == null || nome.trim().isEmpty()) {
             throw new IllegalArgumentException(
                     "Não é permitido categoria em branco, por favor digite uma categoria!");
         }
