@@ -9,14 +9,14 @@ public class DaoLivro {
     
     private Set<Livro> livro = new HashSet<Livro>();
 
-    public void addLivro(Livro l) {
+    public void addLivro(Livro liv) {
 
-        if (!livro.add(l)) {
+        if (!livro.add(liv)) {
             throw new RuntimeException("Livro informado já existe!");
         }
 
         System.out.println("Livro cadastrado com sucesso!");
-        System.out.println(l);
+        System.out.println(liv);
 
     }
 }

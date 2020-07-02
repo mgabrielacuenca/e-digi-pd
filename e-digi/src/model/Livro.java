@@ -9,11 +9,11 @@ public class Livro {
     private String isbn;
     private Autor autor;
     private Categoria categoria;
-    private String edicao;
+    private int edicao;
     private double preco;
 
     public Livro(String titulo, String resumo, String sumario, int nropaginas, String isbn, Autor autor,
-            Categoria categoria, String edicao, double preco) {
+            Categoria categoria, int edicao, double preco) {
 
         setTitulo(titulo);
         setResumo(resumo);
@@ -36,7 +36,7 @@ public class Livro {
     }
 
     private void setResumo(String resumo) {
-        if (resumo.length() < 500) {
+        if (resumo == null ||resumo.length() < 500) {
             throw new IllegalArgumentException("O resumo precisa ter pelo menos 500 caracteres!");
         }
 
@@ -69,11 +69,9 @@ public class Livro {
         this.isbn = isbn;
     }
 
-    private void setEdicao(String edicao) {
-        String regexEdicao = "^1[0-9]*$";
-
-        if (!edicao.matches(regexEdicao)) {
-            throw new IllegalArgumentException("Edição não pode começar com 0!");
+    private void setEdicao(int edicao) {
+        if (edicao <= 0){
+            throw new IllegalArgumentException("Edição não pode ser 0!");
         }
 
         this.edicao = edicao;
@@ -118,7 +116,7 @@ public class Livro {
     public String toString() {
         return "Título: " + this.titulo + "\n" + "Resumo: " + this.resumo + "\n" + "Sumário: " + this.sumario + "\n"
                 + "Páginas: " + this.nropaginas + "\n" + "ISBN: " + this.isbn + "\n" + "Edição: " + this.edicao + "\n"
-                + "Preço: " + this.preco + "\n" + "Autor: " + this.autor + "Categoria: " + this.categoria;
+                + "Preço: " + this.preco + "\n" + this.autor + this.categoria;
     }
 
 }

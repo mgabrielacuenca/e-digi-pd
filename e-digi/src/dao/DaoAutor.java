@@ -9,15 +9,15 @@ public class DaoAutor {
 
     private Set<Autor> autor = new HashSet<Autor>();
 
-    public void addAutor(Autor a) {
+    public void addAutor(Autor aut) {
 
         // confere se o email existe na base
-        if (!autor.add(a)) {
+        if (!autor.add(aut)) {
             throw new RuntimeException("Email informado já existe!");
         }
 
         System.out.println("Cadastro realizado com sucesso!");
-        System.out.println(a);
+        System.out.println(aut);
 
     }
 }
