@@ -10,8 +10,7 @@ public class Categoria {
 
     private void setNome(String nome) {
         if (nome == null || nome.trim().isEmpty()) {
-            throw new IllegalArgumentException(
-                    "Não é permitido categoria em branco, por favor digite uma categoria!");
+            throw new IllegalArgumentException("Não é permitido categoria em branco, por favor digite uma categoria!");
         }
 
         this.nome = nome;
@@ -31,7 +30,7 @@ public class Categoria {
 
     @Override
     public String toString() {
-        return "Nome: " + this.nome + "\n";
+        return "Categoria: " + this.nome + "\n";
     }
 
 }

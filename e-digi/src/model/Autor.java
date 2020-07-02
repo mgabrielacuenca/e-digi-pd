@@ -12,7 +12,7 @@ public class Autor {
 
     private void setNome(String nome) {
         // valida campo em branco ou se apenas tem espaço.
-        if (nome == null || nome.trim().isEmpty())) {
+        if (nome == null || nome.trim().isEmpty()) {
             throw new IllegalArgumentException("Não é permitido nomes em branco, por favor digite um nome válido!");
         }
 
@@ -47,6 +47,6 @@ public class Autor {
 
     @Override
     public String toString() {
-        return "Nome: " + this.nome + "\n" + "Email: " + this.email + "\n";
+        return "Autor: " + this.nome + "\n" + "Email: " + this.email + "\n";
     }
 }
