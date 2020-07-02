@@ -9,7 +9,7 @@ public class DaoLivro {
     
     private Set<Livro> livro = new HashSet<Livro>();
 
-    public void addCategoria(Livro l) {
+    public void addLivro(Livro l) {
 
         if (!livro.add(l)) {
             throw new RuntimeException("Livro informado já existe!");
@@ -19,5 +19,4 @@ public class DaoLivro {
         System.out.println(l);
 
     }
-}
 }

@@ -47,6 +47,6 @@ public class Autor {
 
     @Override
     public String toString() {
-        return "Nome: " + this.nome + "\n" + "Email: " + this.email + "\n";
+        return this.nome + "\n" + "Email: " + this.email + "\n";
     }
 }

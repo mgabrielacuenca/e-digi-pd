@@ -30,7 +30,7 @@ public class Categoria {
 
     @Override
     public String toString() {
-        return "Nome: " + this.nome + "\n";
+        return this.nome + "\n";
     }
 
 }
