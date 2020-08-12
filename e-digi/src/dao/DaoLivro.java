@@ -1,12 +1,13 @@
 package dao;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import model.Livro;
 
 public class DaoLivro {
-    
+
     private Set<Livro> livroSet = new HashSet<Livro>();
 
     public void addLivro(Livro livro) {
@@ -18,5 +19,13 @@ public class DaoLivro {
         System.out.println("Livro cadastrado com sucesso!");
         System.out.println(livro);
 
+    }
+
+    public List<Livro> buscarTitulo(String titulo){
+        if(titulo.length() < 2 || titulo == null || titulo.trim().isEmpty()){
+            throw new IllegalArgumentException("O título não pode estar vazio ou ter menos de dois caracteres.");
+        }
+        
+        
     }
 }
