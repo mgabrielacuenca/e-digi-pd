@@ -114,9 +114,7 @@ public class Livro {
 
     @Override
     public String toString() {
-        return "Título: " + this.titulo + "\n" + "Resumo: " + this.resumo + "\n" + "Sumário: " + this.sumario + "\n"
-                + "Páginas: " + this.nropaginas + "\n" + "ISBN: " + this.isbn + "\n" + "Edição: " + this.edicao + "\n"
-                + "Preço: " + this.preco + "\n" + this.autor + this.categoria;
+        return "Título: " + this.titulo + "\n" + this.autor;
     }
 
 }

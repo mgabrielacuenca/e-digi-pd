@@ -23,11 +23,11 @@ public class DaoLivro {
 
     }
 
-    public List<Livro> buscarTitulo(String titulo){
-        if(titulo.length() < 2 || titulo == null || titulo.trim().isEmpty()){
+    public List<Livro> buscarTitulo(String titulo) {
+        if (titulo.length() < 2 || titulo == null || titulo.trim().isEmpty()) {
             throw new IllegalArgumentException("O título não pode estar vazio ou ter menos de dois caracteres.");
         }
-        
+
         return livroSet.stream().filter(livro -> livro.getTitulo()).collect(Collectors.toList());
     }
 }
