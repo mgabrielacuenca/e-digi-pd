@@ -28,6 +28,7 @@ public class DaoLivro {
         }
 
         System.out.println("Resultado da busca:");
-        return livroSet.stream().filter(livro -> livro.getTitulo().toLowerCase().contains(titulo)).collect(Collectors.toList());
+        return livroSet.stream().filter(livro -> livro.getTitulo().toLowerCase().contains(titulo.toLowerCase()))
+                .collect(Collectors.toList());
     }
 }

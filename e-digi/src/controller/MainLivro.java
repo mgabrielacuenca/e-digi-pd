@@ -24,7 +24,7 @@ public class MainLivro {
         DaoLivro livroadd = new DaoLivro();
         livroadd.addLivro(livro);
 
-        System.out.println(livroadd.buscarTitulo("fortaleza"));
+        System.out.println(livroadd.buscarTitulo("FORTALEZA"));
 
 
     }
