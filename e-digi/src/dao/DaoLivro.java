@@ -3,7 +3,6 @@ package dao;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import model.Livro;
@@ -24,10 +23,11 @@ public class DaoLivro {
     }
 
     public List<Livro> buscarTitulo(String titulo) {
-        if (titulo.length() < 2 || titulo == null || titulo.trim().isEmpty()) {
+        if (titulo == null || titulo.trim().isEmpty() || titulo.length() < 2) {
             throw new IllegalArgumentException("O título não pode estar vazio ou ter menos de dois caracteres.");
         }
 
-        return livroSet.stream().filter(livro -> livro.getTitulo()).collect(Collectors.toList());
+        System.out.println("Resultado da busca:");
+        return livroSet.stream().filter(livro -> livro.getTitulo().toLowerCase().contains(titulo)).collect(Collectors.toList());
     }
 }

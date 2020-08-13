@@ -27,6 +27,10 @@ public class Livro {
 
     }
 
+    public String getTitulo() {
+        return this.titulo;
+    }
+
     private void setTitulo(String titulo) {
         if (titulo == null || titulo.trim().isEmpty()) {
             throw new IllegalArgumentException("Não é permitido título em branco, por favor digite um título!");
@@ -114,7 +118,9 @@ public class Livro {
 
     @Override
     public String toString() {
-        return "Título: " + this.titulo + "\n" + this.autor;
+        return "Título: " + this.titulo + "\n" + "Resumo: " + this.resumo + "\n" + "Sumário: " + this.sumario + "\n"
+                + "Páginas: " + this.nropaginas + "\n" + "ISBN: " + this.isbn + "\n" + "Edição: " + this.edicao + "\n"
+                + "Preço: " + this.preco + "\n" + this.autor + this.categoria;
     }
 
 }
