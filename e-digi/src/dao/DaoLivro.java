@@ -31,4 +31,8 @@ public class DaoLivro {
         return livroSet.stream().filter(livro -> livro.getTitulo().toLowerCase().contains(titulo.toLowerCase()))
                 .collect(Collectors.toList());
     }
+
+    public boolean temLivro(Livro livro) {
+        return livroSet.contains(livro);
+    }
 }
