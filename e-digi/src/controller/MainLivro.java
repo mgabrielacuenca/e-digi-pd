@@ -6,6 +6,7 @@ import dao.DaoLivro;
 import model.Autor;
 import model.Categoria;
 import model.Livro;
+import model.VendaLivro;
 
 public class MainLivro {
     public static void main(final String[] args) throws Exception {
@@ -26,6 +27,8 @@ public class MainLivro {
 
         System.out.println(livroadd.buscarTitulo("FORTALEZA"));
 
+        VendaLivro vendalivro = new VendaLivro();
+        vendalivro.addLivroCarrinho(livro);
 
     }
 }

@@ -7,7 +7,7 @@ import model.Autor;
 
 public class DaoAutor {
 
-    private Set<Autor> autorSet = new HashSet<Autor>();
+    private static Set<Autor> autorSet = new HashSet<Autor>();
 
     public void addAutor(Autor autor) {
 

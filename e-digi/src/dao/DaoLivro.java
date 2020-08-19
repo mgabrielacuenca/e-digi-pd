@@ -9,7 +9,7 @@ import model.Livro;
 
 public class DaoLivro {
 
-    private Set<Livro> livroSet = new HashSet<Livro>();
+    private static Set<Livro> livroSet = new HashSet<Livro>();
 
     public void addLivro(Livro livro) {
 

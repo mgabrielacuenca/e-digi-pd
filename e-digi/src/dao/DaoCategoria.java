@@ -7,7 +7,7 @@ import model.Categoria;
 
 public class DaoCategoria {
 
-    private Set<Categoria> categoriaSet = new HashSet<Categoria>();
+    private static Set<Categoria> categoriaSet = new HashSet<Categoria>();
 
     public void addCategoria(Categoria categoria) {
 
