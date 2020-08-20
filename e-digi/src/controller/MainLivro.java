@@ -3,6 +3,7 @@ package controller;
 import dao.DaoAutor;
 import dao.DaoCategoria;
 import dao.DaoLivro;
+import dao.VendaLivro;
 import model.Autor;
 import model.Categoria;
 import model.Livro;
@@ -28,7 +29,12 @@ public class MainLivro {
         livroadd.addLivro(livro);
         System.out.println(livro);
 
-       
+        //livroadd.buscarTitulo("Fortaleza");
+
+        VendaLivro venda = new VendaLivro();
+        venda.addLivroVenda(livro, 4);
+        venda.addLivroVenda(livro, 7);
+        venda.compraFinalizada();
 
 
     }
