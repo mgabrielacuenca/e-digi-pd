@@ -9,16 +9,15 @@ import model.Livro;
 
 public class DaoLivro {
 
-    private static Set<Livro> livroSet = new HashSet<Livro>();
+    private static Set<Livro> livroSet = new HashSet<>();
 
     public void addLivro(Livro livro) {
 
-        if (!livroSet.add(livro)) {
+        if (livroSet.contains(livro)) {
             throw new RuntimeException("Livro informado já existe!");
         }
 
-        System.out.println("Livro cadastrado com sucesso!");
-        System.out.println(livro);
+        livroSet.add(livro);
 
     }
 

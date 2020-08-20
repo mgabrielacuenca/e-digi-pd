@@ -7,17 +7,16 @@ import model.Autor;
 
 public class DaoAutor {
 
-    private static Set<Autor> autorSet = new HashSet<Autor>();
+    private static Set<Autor> autorSet = new HashSet<>();
 
     public void addAutor(Autor autor) {
 
         // confere se o email existe na base
-        if (!autorSet.add(autor)) {
+        if (autorSet.contains(autor)) {
             throw new RuntimeException("Email informado já existe!");
         }
 
-        System.out.println("Cadastro realizado com sucesso!");
-        System.out.println(autor);
+        autorSet.add(autor);
 
     }
 }

@@ -7,16 +7,15 @@ import model.Categoria;
 
 public class DaoCategoria {
 
-    private static Set<Categoria> categoriaSet = new HashSet<Categoria>();
+    private static Set<Categoria> categoriaSet = new HashSet<>();
 
     public void addCategoria(Categoria categoria) {
 
-        if (!categoriaSet.add(categoria)) {
+        if (categoriaSet.contains(categoria)) {
             throw new RuntimeException("Categoria informada já existe!");
         }
 
-        System.out.println("Categoria cadastrada com sucesso!");
-        System.out.println(categoria);
+        categoriaSet.add(categoria);
 
     }
 }
