@@ -34,4 +34,10 @@ public class DaoLivro {
     public boolean temLivro(Livro livro) {
         return livroSet.contains(livro);
     }
+
+    public void addLivroCarrinho(Livro livro){
+        if (!temLivro(livro)){
+            throw new RuntimeException("O livro precisa existir no catálogo!");
+        }
+    } 
 }
