@@ -5,9 +5,9 @@ import java.util.Map;
 
 import model.Livro;
 
-public class VendaLivro {
+public class Vendas {
 
-    private DaoLivro daolivro = new DaoLivro();
+    private LivroDao daolivro = new LivroDao();
 
     private Map<Livro, Integer> vendas = new HashMap<>();
 
@@ -17,7 +17,7 @@ public class VendaLivro {
         }
     }
 
-    public void addLivroVenda(Livro livro, int qtdLivro) {
+    public void addLivroCarrinho(Livro livro, int qtdLivro) {
 
         verificaqtd(qtdLivro);
 

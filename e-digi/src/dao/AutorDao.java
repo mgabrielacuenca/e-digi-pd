@@ -5,11 +5,11 @@ import java.util.Set;
 
 import model.Autor;
 
-public class DaoAutor {
+public class AutorDao {
 
-    private static Set<Autor> autorSet = new HashSet<>();
+    private Set<Autor> autorSet = new HashSet<>();
 
-    public void addAutor(Autor autor) {
+    public void add(Autor autor) {
 
         // confere se o email existe na base
         if (autorSet.contains(autor)) {

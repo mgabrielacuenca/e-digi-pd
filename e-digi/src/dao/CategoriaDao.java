@@ -5,11 +5,11 @@ import java.util.Set;
 
 import model.Categoria;
 
-public class DaoCategoria {
+public class CategoriaDao {
 
-    private static Set<Categoria> categoriaSet = new HashSet<>();
+    private Set<Categoria> categoriaSet = new HashSet<>();
 
-    public void addCategoria(Categoria categoria) {
+    public void add(Categoria categoria) {
 
         if (categoriaSet.contains(categoria)) {
             throw new RuntimeException("Categoria informada já existe!");

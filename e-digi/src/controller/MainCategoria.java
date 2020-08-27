@@ -1,6 +1,6 @@
 package controller;
 
-import dao.DaoCategoria;
+import dao.CategoriaDao;
 import model.Categoria;
 
 public class MainCategoria {
@@ -11,9 +11,9 @@ public class MainCategoria {
         Categoria categoria1 = new Categoria("Ficção");
 
         // realizando as inserções e imprimindo no caso de sucesso
-        DaoCategoria categoriaadd = new DaoCategoria();
-        categoriaadd.addCategoria(categoria);
-        categoriaadd.addCategoria(categoria1);
+        CategoriaDao categoriaadd = new CategoriaDao();
+        categoriaadd.add(categoria);
+        categoriaadd.add(categoria1);
 
     }
 }

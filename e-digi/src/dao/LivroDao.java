@@ -7,11 +7,11 @@ import java.util.stream.Collectors;
 
 import model.Livro;
 
-public class DaoLivro {
+public class LivroDao {
 
     private static Set<Livro> livroSet = new HashSet<>();
 
-    public void addLivro(Livro livro) {
+    public void add(Livro livro) {
 
         if (livroSet.contains(livro)) {
             throw new RuntimeException("Livro informado já existe!");
