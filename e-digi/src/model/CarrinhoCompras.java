@@ -1,11 +1,12 @@
-package dao;
+package model;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import dao.LivroDao;
 import model.Livro;
 
-public class Vendas {
+public class CarrinhoCompras {
 
     private LivroDao daolivro = new LivroDao();
 
@@ -32,23 +33,26 @@ public class Vendas {
         }
     }
 
-    public void compraFinalizada() {
+    public double valorTotalCompra() {
 
-        // isso aqui é pra caso alguem nao chame o método de add livro e chame o
-        // vendaFinalizada logo de cara
+        double sum = vendas.keySet().stream().mapToDouble(livro -> vendas.get(livro) * livro.getPreco()).sum();
+        return sum;
+
+    }
+
+    public void finalizarCompra() {
+
         if (!vendas.keySet().isEmpty()) {
-            double valorTotal = 0.0;
 
             System.out.println("Venda Finalizada!");
 
             for (Livro livro : vendas.keySet()) {
-                valorTotal += vendas.get(livro) * livro.getPreco();
 
                 System.out.println("Título: " + livro.getTitulo() + "\n" + "Quantidade: " + vendas.get(livro) + "\n"
                         + "Preço da Unidade: " + livro.getPreco() + "\n");
             }
 
-            System.out.println("Valor total da Compra: R$ " + valorTotal);
+            System.out.println("Valor total da Compra: R$ " + valorTotalCompra());
         } else {
             throw new RuntimeException("É necessário adicionar um livro no carrinho para fechar a compra!");
         }

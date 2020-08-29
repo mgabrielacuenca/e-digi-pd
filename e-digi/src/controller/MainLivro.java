@@ -3,7 +3,7 @@ package controller;
 import dao.AutorDao;
 import dao.CategoriaDao;
 import dao.LivroDao;
-import dao.Vendas;
+import model.CarrinhoCompras;
 import model.Autor;
 import model.Categoria;
 import model.Livro;
@@ -31,10 +31,10 @@ public class MainLivro {
 
         //livroadd.buscarTitulo("Fortaleza");
 
-        Vendas venda = new Vendas();
+        CarrinhoCompras venda = new CarrinhoCompras();
         venda.addLivroCarrinho(livro, 4);
         venda.addLivroCarrinho(livro, 7);
-        venda.compraFinalizada();
+        venda.finalizarCompra();
 
 
     }
