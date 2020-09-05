@@ -18,7 +18,7 @@ public class CarrinhoCompras {
         }
     }
 
-    public void addLivroCarrinho(Livro livro, int qtdLivro) {
+    public void add(Livro livro, int qtdLivro) {
 
         verificaqtd(qtdLivro);
 
@@ -35,8 +35,7 @@ public class CarrinhoCompras {
 
     public double valorTotalCompra() {
 
-        double sum = vendas.keySet().stream().mapToDouble(livro -> vendas.get(livro) * livro.getPreco()).sum();
-        return sum;
+        return vendas.keySet().stream().mapToDouble(livro -> vendas.get(livro) * livro.getPreco()).sum();
 
     }
 
