@@ -15,7 +15,8 @@ public class AutorDao {
         if (!autorSet.add(autor)) {
             throw new RuntimeException("Email informado já existe!");
         }
-
+        
+        System.out.println("Cadastro realizado com sucesso!");
 
     }
 }

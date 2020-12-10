@@ -17,7 +17,7 @@ public class LivroDao {
             throw new RuntimeException("Livro informado já existe!");
         }
 
-      
+        System.out.println("Cadastro realizado com sucesso!");
 
     }
 
@@ -35,5 +35,4 @@ public class LivroDao {
         return livroSet.contains(livro);
     }
 
-   
 }

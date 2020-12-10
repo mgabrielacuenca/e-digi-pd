@@ -15,6 +15,7 @@ public class CategoriaDao {
             throw new RuntimeException("Categoria informada já existe!");
         }
 
+        System.out.println("Cadastro realizado com sucesso!");
 
     }
 }

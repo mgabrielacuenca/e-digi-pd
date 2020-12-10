@@ -31,7 +31,7 @@ public class MainLivro {
 
         //livroadd.buscarTitulo("Fortaleza");
 
-        CarrinhoCompras venda = new CarrinhoCompras();
+        CarrinhoCompras venda = new CarrinhoCompras(livroadd);
         venda.add(livro, 4);
         venda.add(livro, 7);
         venda.finalizarCompra();

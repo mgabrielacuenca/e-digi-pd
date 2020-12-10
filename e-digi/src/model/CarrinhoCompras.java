@@ -4,11 +4,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 import dao.LivroDao;
-import model.Livro;
 
 public class CarrinhoCompras {
 
-    private LivroDao daolivro = new LivroDao();
+    private LivroDao daolivro;
+
+    public CarrinhoCompras(LivroDao daolivro) {
+
+        this.daolivro = daolivro;
+
+    }
 
     private Map<Livro, Integer> vendas = new HashMap<>();
 
@@ -24,12 +29,11 @@ public class CarrinhoCompras {
 
         if (!daolivro.temLivro(livro)) {
             throw new RuntimeException("O livro não existe em nosso catálogo!");
+        }
+        if (vendas.containsKey(livro)) {
+            vendas.put(livro, vendas.get(livro) + qtdLivro);
         } else {
-            if (vendas.containsKey(livro)) {
-                vendas.put(livro, vendas.get(livro) + qtdLivro);
-            } else {
-                vendas.put(livro, qtdLivro);
-            }
+            vendas.put(livro, qtdLivro);
         }
     }
 
@@ -41,20 +45,24 @@ public class CarrinhoCompras {
 
     public void finalizarCompra() {
 
-        if (!vendas.keySet().isEmpty()) {
+        StringBuilder sb = new StringBuilder("Venda Finalizada!\n");
 
-            System.out.println("Venda Finalizada!");
-
-            for (Livro livro : vendas.keySet()) {
-
-                System.out.println("Título: " + livro.getTitulo() + "\n" + "Quantidade: " + vendas.get(livro) + "\n"
-                        + "Preço da Unidade: " + livro.getPreco() + "\n");
-            }
-
-            System.out.println("Valor total da Compra: R$ " + valorTotalCompra());
-        } else {
+        if (vendas.keySet().isEmpty()) {
             throw new RuntimeException("É necessário adicionar um livro no carrinho para fechar a compra!");
+
         }
+
+        for (Livro livro : vendas.keySet()) {
+
+            sb.append("Título: ").append(livro.getTitulo())
+            .append("\nQuantidade: ").append(vendas.get(livro))
+            .append("\nPreço da Unidade: ").append(livro.getPreco());
+        }
+
+        sb.append("\nValor total da Compra: R$ " + valorTotalCompra());
+
+        System.out.println(sb.toString());
+
     }
 
 }
