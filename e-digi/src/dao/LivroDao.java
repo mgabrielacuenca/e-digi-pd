@@ -7,18 +7,17 @@ import java.util.stream.Collectors;
 
 import model.Livro;
 
-public class DaoLivro {
+public class LivroDao {
 
-    private Set<Livro> livroSet = new HashSet<Livro>();
+    private static Set<Livro> livroSet = new HashSet<>();
 
-    public void addLivro(Livro livro) {
+    public void add(Livro livro) {
 
         if (!livroSet.add(livro)) {
             throw new RuntimeException("Livro informado já existe!");
         }
 
-        System.out.println("Livro cadastrado com sucesso!");
-        System.out.println(livro);
+        System.out.println("Cadastro realizado com sucesso!");
 
     }
 
@@ -31,4 +30,9 @@ public class DaoLivro {
         return livroSet.stream().filter(livro -> livro.getTitulo().toLowerCase().contains(titulo.toLowerCase()))
                 .collect(Collectors.toList());
     }
+
+    public boolean temLivro(Livro livro) {
+        return livroSet.contains(livro);
+    }
+
 }

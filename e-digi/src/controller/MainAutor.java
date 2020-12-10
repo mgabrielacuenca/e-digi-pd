@@ -1,6 +1,6 @@
 package controller;
 
-import dao.DaoAutor;
+import dao.AutorDao;
 import model.Autor;
 
 public class MainAutor {
@@ -11,9 +11,9 @@ public class MainAutor {
         Autor autor1 = new Autor("Gabriela", "mariagabi@gmail.com");
 
         // realizando as inserções e imprimindo no caso de sucesso
-        DaoAutor autoradd = new DaoAutor();
-        autoradd.addAutor(autor);
-        autoradd.addAutor(autor1);
+        AutorDao autoradd = new AutorDao();
+        autoradd.add(autor);
+        autoradd.add(autor1);
 
     }
 }

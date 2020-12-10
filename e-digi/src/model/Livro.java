@@ -40,7 +40,7 @@ public class Livro {
     }
 
     private void setResumo(String resumo) {
-        if (resumo == null ||resumo.length() < 500) {
+        if (resumo == null || resumo.length() < 500) {
             throw new IllegalArgumentException("O resumo precisa ter pelo menos 500 caracteres!");
         }
 
@@ -74,11 +74,15 @@ public class Livro {
     }
 
     private void setEdicao(int edicao) {
-        if (edicao <= 0){
+        if (edicao <= 0) {
             throw new IllegalArgumentException("Edição não pode ser 0!");
         }
 
         this.edicao = edicao;
+    }
+
+    public double getPreco() {
+        return this.preco;
     }
 
     private void setPreco(double preco) {
