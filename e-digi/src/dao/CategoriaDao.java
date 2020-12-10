@@ -11,11 +11,10 @@ public class CategoriaDao {
 
     public void add(Categoria categoria) {
 
-        if (categoriaSet.contains(categoria)) {
+        if (!categoriaSet.add(categoria)) {
             throw new RuntimeException("Categoria informada já existe!");
         }
 
-        categoriaSet.add(categoria);
 
     }
 }

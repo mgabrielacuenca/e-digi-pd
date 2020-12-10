@@ -13,11 +13,11 @@ public class LivroDao {
 
     public void add(Livro livro) {
 
-        if (livroSet.contains(livro)) {
+        if (!livroSet.add(livro)) {
             throw new RuntimeException("Livro informado já existe!");
         }
 
-        livroSet.add(livro);
+      
 
     }
 

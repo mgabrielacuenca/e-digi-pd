@@ -12,11 +12,10 @@ public class AutorDao {
     public void add(Autor autor) {
 
         // confere se o email existe na base
-        if (autorSet.contains(autor)) {
+        if (!autorSet.add(autor)) {
             throw new RuntimeException("Email informado já existe!");
         }
 
-        autorSet.add(autor);
 
     }
 }
